@@ -1,6 +1,7 @@
 "use client";
 
 import { Mail, ArrowUp } from "lucide-react";
+import Image from "next/image";
 
 const GitHubIcon = () => (
   <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -23,8 +24,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo + copy */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center shadow-xs">
-              <span className="text-white font-extrabold text-xs">PS</span>
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center bg-white shadow-xs">
+              <Image
+                src="/logo.jpg"
+                alt="Pujan Shrestha Logo"
+                width={32}
+                height={32}
+                className="object-contain w-full h-full p-0.5"
+              />
             </div>
             <p className="text-slate-500 text-sm">
               © {new Date().getFullYear()} <span className="text-slate-800 font-semibold">Pujan Shrestha</span>. All rights reserved.

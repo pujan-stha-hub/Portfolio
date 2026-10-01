@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, FileText, Clock } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -24,7 +25,7 @@ const navLinks = [
   { href: "/#contact", label: "Contact" },
 ];
 
-const nameCycle = ["पूजन श्रेष्ठ", "푸잔 슈레스타", "Pujan Shrestha"];
+const nameCycle = ["पूजन श्रेष्ठ", "Pujan Shrestha"];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,9 +102,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 bg-black rounded-xl flex items-center justify-center shadow-md shadow-black/10 group-hover:scale-105 transition-all duration-300">
-            <span className="text-white font-extrabold text-base tracking-tight">PS</span>
-            <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white animate-pulse" />
+          <div className="relative w-10 h-10 bg-white rounded-xl overflow-hidden border border-slate-200 shadow-md shadow-black/5 flex items-center justify-center group-hover:scale-105 transition-all duration-300">
+            <Image
+              src="/logo.jpg"
+              alt="Pujan Shrestha Logo"
+              width={40}
+              height={40}
+              className="object-contain w-full h-full p-0.5"
+              priority
+            />
+            <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white animate-pulse z-10" />
           </div>
           <span className="font-semibold text-xl tracking-tight text-slate-900 transition-colors duration-300 font-mono min-w-[4.5rem]">
             {displayedName}

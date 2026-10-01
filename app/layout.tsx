@@ -17,6 +17,10 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Pujan Shrestha | Full Stack Developer",
   description: "Portfolio of Pujan Shrestha - Full Stack Developer specializing in building modern web applications, scalable backends, and responsive user experiences.",
+  icons: {
+    icon: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({
